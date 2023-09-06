@@ -18,7 +18,8 @@ public class UniversidadUlp {
         Conexion conexion = new Conexion("Universidadulp"); 
         conexion.conectar();
         
-        Alumno alumno1= new Alumno(36314380, "Redondo", "Paula", LocalDate.of(1992, Month.OCTOBER, 7), true);
+        Alumno alumno1= new Alumno(36314380, "Redondo", "Paula", LocalDate.of(1992, 10, 7), true);
+        System.out.println(alumno1.toString());
         alumno1.agregarAlumno(alumno1);
         
 //        String sql= "INSERT INTO alumno VALUES (null, 36314380, 'Redondo', 'Paula', '1992-10-07',true)";

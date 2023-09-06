@@ -71,12 +71,17 @@ public class Alumno {
     public void setEstado(boolean estado) {
         this.estado = estado;
     }
+
+    @Override
+    public String toString() {
+        return "Alumno{" + "idAlumno=" + idAlumno + ", dni=" + dni + ", apellido=" + apellido + ", nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + ", estado=" + estado + '}';
+    }
+    
     
     public void agregarAlumno(Alumno alumno ){
         Conexion conexion = new Conexion("Universidadulp");
-        String sql= "INSERT INTO alumno (idAlumno,dni,apellido,nombre,fechaNacimiento,estado) "
-                + "VALUES(?,'"+alumno.getNombre()+"','"+alumno.getApellido()+"','"+alumno.getFechaNacimiento()+"',"+alumno.isEstado()+")";
-     
+        String sql= "INSERT INTO alumno VALUES(NULL,'"+alumno.getDni()+"','"+alumno.getNombre()+"','"+alumno.getApellido()+"','"+alumno.getFechaNacimiento()+"',"+alumno.isEstado()+")";
+       
         try {
             PreparedStatement ps=conexion.conectar().prepareStatement(sql);            
             ps.executeUpdate();
